@@ -1,0 +1,105 @@
+/* ───────────────────────────────────────────────
+   Skills.css – Interactive Tag Cloud
+   ─────────────────────────────────────────────── */
+
+.skills-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: clamp(3rem, 8vh, 6rem) clamp(2rem, 5vw, 6rem);
+  box-sizing: border-box;
+  background-color: var(--bg-primary, #0a0a0a);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.skills-number {
+  bottom: 2rem;
+  left: 2rem;
+  opacity: 0.2;
+}
+
+.skills-header {
+  position: absolute;
+  top: clamp(2rem, 6vh, 4rem);
+  left: clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.skills-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.skills-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-orange);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* ── Draggable Tag Cloud ── */
+.skills-cloud {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-pill {
+  position: absolute;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: grab;
+  user-select: none;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.skills-pill:hover {
+  background: rgba(255, 215, 0, 0.1); /* Golden tint */
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.skills-pill:active {
+  cursor: grabbing;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skills-cloud {
+    height: 70vh;
+  }
+  .skills-pill {
+    padding: 0.75rem 1.5rem;
+  }
+}

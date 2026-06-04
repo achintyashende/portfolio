@@ -1,0 +1,48 @@
+/* ============================================
+   APP LAYOUT & SECTION SPACING
+   ============================================ */
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Default mobile behavior (vertical) */
+.horizontal-scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal-scroll-wrapper > section {
+  position: relative;
+  width: 100%;
+}
+
+/* Desktop horizontal behavior */
+@media (min-width: 768px) {
+  .horizontal-scroll-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: max-content;
+    height: 100vh;
+  }
+  
+  .horizontal-scroll-wrapper > section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* strictly no scrolling inside sections */
+    flex-shrink: 0;
+  }
+}
+
+/* Smooth page entry after preloader */
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

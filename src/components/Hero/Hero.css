@@ -1,0 +1,255 @@
+/* ───────────────────────────────────────────────
+   Hero.css – Douglus Inspired Redesign
+   ─────────────────────────────────────────────── */
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-primary, #0a0a0a);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+}
+
+/* ── Ambient Glow Orb (Idea B) ── */
+.hero-ambient-orb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 85, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%); /* Center on cursor */
+  will-change: transform;
+}
+
+/* ── Typography Blocks ── */
+.hero-role-block {
+  position: absolute;
+  top: clamp(6rem, 15vh, 8rem);
+  right: clamp(2rem, 5vw, 6rem);
+  text-align: right;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.hero-role-line {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.hero-location {
+  margin-top: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.hero-location-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-orange);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(255, 85, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+}
+
+.hero-name-block {
+  position: absolute;
+  bottom: clamp(5rem, 12vh, 8rem);
+  left: clamp(2rem, 5vw, 6rem);
+  text-align: left;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.hero-name-line {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(5rem, 13vw, 15rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin: 0;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+/* Character level animation wrappers */
+.hero-role-char,
+.hero-name-char {
+  display: inline-block;
+}
+.hero-role-char.space,
+.hero-name-char.space {
+  width: 0.25em;
+}
+
+/* ── Fixed Photo Container ── */
+.hero-photo-wrapper {
+  position: absolute;
+  top: 35%;
+  right: 15%;
+  width: clamp(280px, 30vw, 500px);
+  aspect-ratio: 16 / 9;
+  z-index: 50;
+}
+
+.hero-photo-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Slight rounding for a premium feel */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.hero-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Prevents ghost dragging of the img tag itself */
+  filter: grayscale(20%) contrast(1.1);
+}
+
+/* Adds a subtle warm, golden tint mimicking the reference */
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-orange);
+  mix-blend-mode: soft-light;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Bottom Marquee ── */
+.hero-marquee {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+.hero-marquee-inner {
+  display: inline-block;
+  animation: heroMarquee 30s linear infinite;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+}
+@keyframes heroMarquee {
+  from { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Interactive Scroll Button ── */
+.hero-scroll-btn {
+  position: absolute;
+  bottom: 6rem;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hero-scroll-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+}
+
+.hero-scroll-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.hero-scroll-btn:hover .hero-scroll-icon-wrap {
+  border-color: var(--accent-orange);
+  background: rgba(255, 85, 0, 0.05);
+}
+
+.hero-scroll-btn-icon {
+  color: var(--accent-orange);
+}
+
+/* ── Instagram Link ── */
+.hero-social-link {
+  position: absolute;
+  bottom: 2rem;
+  right: clamp(2rem, 5vw, 6rem);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  z-index: 20;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+}
+
+.hero-social-link:hover {
+  color: var(--accent-orange);
+  border-bottom-color: var(--accent-orange);
+}
+
+/* ── Responsive ── */
+@media (max-width: 968px) {
+  .hero-photo-wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+  }
+  .hero-role-block {
+    top: 8rem;
+    right: 2rem;
+  }
+  .hero-name-block {
+    bottom: 8rem;
+    left: 2rem;
+  }
+}
