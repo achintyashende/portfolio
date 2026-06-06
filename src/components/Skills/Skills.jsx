@@ -42,12 +42,17 @@ const Skills = () => {
       pillsRef.current.forEach((pill, i) => {
         if (!pill) return;
         
-        // Initial scatter (wider spread)
+        // Determine spread based on screen size to prevent mobile overflow
+        const isMobile = window.innerWidth < 768;
+        const xRange = isMobile ? window.innerWidth * 0.25 : window.innerWidth * 0.4;
+        const yRange = isMobile ? window.innerHeight * 0.25 : window.innerHeight * 0.35;
+
+        // Initial scatter
         gsap.set(pill, {
-          x: gsap.utils.random(-window.innerWidth * 0.4, window.innerWidth * 0.4),
-          y: gsap.utils.random(-window.innerHeight * 0.35, window.innerHeight * 0.35),
+          x: gsap.utils.random(-xRange, xRange),
+          y: gsap.utils.random(-yRange, yRange),
           rotation: gsap.utils.random(-25, 25),
-          scale: gsap.utils.random(0.8, 1.3),
+          scale: isMobile ? gsap.utils.random(0.7, 1.1) : gsap.utils.random(0.8, 1.3),
         });
 
         // Entrance animation

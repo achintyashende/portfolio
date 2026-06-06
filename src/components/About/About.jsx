@@ -71,7 +71,7 @@ const About = () => {
         <div className="about-right">
           
           <div className="about-profile-img-wrapper about-stagger">
-            <img src="/profile.jpg" alt="Achintya Shende" className="about-profile-img" />
+            <img src="/landscape.jpg" alt="Achintya Shende" className="about-profile-img" />
           </div>
 
           <div className="about-snippet about-stagger">

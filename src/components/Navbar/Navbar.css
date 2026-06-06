@@ -37,7 +37,7 @@
 
 /* ── Logo ────────────────────────────────────── */
 .navbar__logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.25rem;
   color: #f5f5f5;
@@ -67,7 +67,7 @@
 }
 
 .navbar__link {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -165,7 +165,7 @@
 }
 
 .navbar__mobile-link {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.5rem;
   text-transform: uppercase;

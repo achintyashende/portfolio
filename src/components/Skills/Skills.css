@@ -35,7 +35,7 @@
 }
 
 .skills-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -45,7 +45,7 @@
 }
 
 .skills-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--accent-orange);
@@ -73,7 +73,7 @@
   border-radius: 999px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-weight: 700;
   color: var(--text-primary);
@@ -102,4 +102,9 @@
   .skills-pill {
     padding: 0.75rem 1.5rem;
   }
+}
+
+@media (max-height: 800px) and (min-width: 768px) {
+  .skills-pill { font-size: clamp(1rem, 1.5vw, 1.4rem); padding: 0.75rem 1.5rem; }
+  .skills-cloud { height: 75vh; }
 }

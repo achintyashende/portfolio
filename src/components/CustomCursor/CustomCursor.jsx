@@ -5,6 +5,7 @@ import './CustomCursor.css';
 export default function CustomCursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);
+  const orbRef = useRef(null);
   const posRef = useRef({ x: -100, y: -100 });
   const [isTouch, setIsTouch] = useState(false);
 
@@ -34,6 +35,17 @@ export default function CustomCursor() {
           x: clientX,
           y: clientY,
           duration: 0.15,
+          ease: 'power2.out',
+          overwrite: 'auto',
+        });
+      }
+
+      // Orb follows with tight delay
+      if (orbRef.current) {
+        gsap.to(orbRef.current, {
+          x: clientX,
+          y: clientY,
+          duration: 0.25,
           ease: 'power2.out',
           overwrite: 'auto',
         });
@@ -161,6 +173,7 @@ export default function CustomCursor() {
 
   return (
     <div className="custom-cursor" id="custom-cursor">
+      <div className="cursor-glow-orb" ref={orbRef} />
       <div className="cursor-dot" ref={dotRef} />
       <div className="cursor-ring" ref={ringRef}>
         <span className="cursor-ring__label">VIEW</span>

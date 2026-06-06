@@ -41,7 +41,7 @@
 }
 
 .hero-role-line {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 1;
@@ -54,7 +54,7 @@
 
 .hero-location {
   margin-top: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(0.75rem, 1vw, 0.9rem);
   font-weight: 500;
   color: var(--text-secondary);
@@ -91,7 +91,7 @@
 }
 
 .hero-name-line {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(5rem, 13vw, 15rem);
   font-weight: 900;
   line-height: 0.85;
@@ -163,7 +163,7 @@
 .hero-marquee-inner {
   display: inline-block;
   animation: heroMarquee 30s linear infinite;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -188,7 +188,7 @@
 }
 
 .hero-scroll-text {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -220,7 +220,7 @@
   position: absolute;
   bottom: 2rem;
   right: clamp(2rem, 5vw, 6rem);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -252,4 +252,13 @@
     bottom: 8rem;
     left: 2rem;
   }
+}
+
+@media (max-height: 800px) and (min-width: 768px) {
+  .hero-name-line { font-size: clamp(5rem, 10vw, 10rem); }
+  .hero-role-line { font-size: clamp(1.5rem, 3vw, 3rem); }
+  .hero-role-block { top: 4rem; }
+  .hero-name-block { bottom: 4rem; }
+  .hero-scroll-btn { bottom: 3rem; transform: scale(0.8); }
+  .hero-photo-wrapper { width: clamp(220px, 25vw, 400px); }
 }

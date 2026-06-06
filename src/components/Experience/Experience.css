@@ -29,14 +29,14 @@
 }
 
 .experience__label-number {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
   color: var(--accent-cyan);
 }
 
 .experience__label-text {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -201,7 +201,7 @@
 }
 
 .experience-card-company {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 700;
   color: #fff;
@@ -216,7 +216,7 @@
   background: rgba(255, 255, 255, 0.05);
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -231,7 +231,7 @@
 }
 
 .experience-card-role h4 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.1rem;
   font-weight: 500;
   margin: 0;
@@ -245,7 +245,7 @@
 }
 
 .experience-card-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-muted);
@@ -272,4 +272,13 @@
   .experience-dot {
     display: none;
   }
+}
+
+@media (max-height: 800px) and (min-width: 768px) {
+  .experience { padding-top: 4rem; }
+  .experience-node--top { padding-bottom: 1.5rem; }
+  .experience-node--bottom { padding-top: 1.5rem; }
+  .experience-node--top::after, .experience-node--bottom::after { height: 1.5rem; }
+  .experience-card { padding: 1.5rem; gap: 1rem; }
+  .experience-card-company { font-size: clamp(1.2rem, 2vw, 1.5rem); }
 }

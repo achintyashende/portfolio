@@ -34,7 +34,7 @@
 }
 
 .projects__label-number {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 500;
   color: #00ff88;
@@ -42,7 +42,7 @@
 }
 
 .projects__label-text {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   font-weight: 500;
   color: #888888;
@@ -115,7 +115,7 @@
 
 /* ── Project number ── */
 .projects__card-number {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 400;
   color: #888888;
@@ -130,7 +130,7 @@
 }
 
 .projects__card-name {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: 700;
   color: #f5f5f5;
@@ -147,14 +147,14 @@
 }
 
 .projects__card-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 400;
   color: #888888;
 }
 
 .projects__card-description {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 400;
   color: #666666;
@@ -171,7 +171,7 @@
 }
 
 .projects__tag {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 500;
   color: #888888;
@@ -333,4 +333,12 @@
     font-size: 0.65rem;
     padding: 0.25rem 0.6rem;
   }
+}
+
+@media (max-height: 800px) and (min-width: 768px) {
+  .projects { padding-top: 5rem !important; }
+  .projects__card { padding: 1.5rem; width: 350px; }
+  .projects__card-name { font-size: clamp(1.2rem, 3vw, 2rem); }
+  .projects__card-inner { gap: 1rem; }
+  .projects__list { gap: 2rem; }
 }
